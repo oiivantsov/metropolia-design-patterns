@@ -2,7 +2,7 @@ package factory_method.rpg_map_generator;
 
 public class Game {
     public static void main(String[] args) {
-        Map map = createMap("City"); // Change to "Wilderness" for WildernessMap
+        Map map = createMap("Wilderness"); // Change to "Wilderness" for WildernessMap
         map.display();
     }
 
