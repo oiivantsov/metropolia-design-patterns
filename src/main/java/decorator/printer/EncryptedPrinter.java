@@ -3,32 +3,44 @@ package decorator.printer;
 import java.util.Base64;
 
 public class EncryptedPrinter extends PrinterDecorator {
-    private Printer printer;
+    private boolean decrypted = false;
 
     public EncryptedPrinter(Printer printer) {
         super(printer);
     }
 
+    public EncryptedPrinter(Printer printer, boolean decrypted) {
+        super(printer);
+        this.decrypted = decrypted;
+    }
+
     @Override
     public void print(String message) {
+        if (decrypted) {
+            String decrypted = decrypt(message);
+            super.print(decrypted);
+            return;
+        }
         String encrypted = encrypt(message);
         super.print(encrypted);
     }
 
-    // Encrypts a message using the Caesar cipher
-    public String encrypt(String message) {
-        StringBuilder encrypted = new StringBuilder();
-        final int SHIFT = 3; // Shift by 3 positions
-        for (char c : message.toCharArray()) {
-            if (Character.isLetter(c)) { // Only shift alphabetic characters
-                char base = Character.isUpperCase(c) ? 'A' : 'a';
-                encrypted.append((char) ((c - base + SHIFT) % 26 + base)); // Wrap within 'A'-'Z' or 'a'-'z'
-            } else {
-                encrypted.append(c); // Leave non-alphabetic characters unchanged
-            }
+    // same logic as Caesar Cipher but for bytes
+    private String encrypt(String data) {
+        byte[] result = data.getBytes();
+        // encryption mechanism: add 1 to each byte
+        for (int i = 0; i < result.length; i++) {
+            result[i] += (byte) 1;
         }
-        return encrypted.toString();
+        return Base64.getEncoder().encodeToString(result);
     }
 
+    private String decrypt(String data) {
+        byte[] result = Base64.getDecoder().decode(data);
+        for (int i = 0; i < result.length; i++) {
+            result[i] -= (byte) 1;
+        }
+        return new String(result);
+    }
 
 }

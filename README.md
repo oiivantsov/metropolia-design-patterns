@@ -9,3 +9,4 @@ Assignments for the Design Patterns course.
 4. Observer. Weather Station Simulator. [Solution](src/main/java/observer/weather_station). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/observer.md).
 5. Singleton. Logger System. [Solution](src/main/java/singleton/logger_system). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/singleton.md).
 6. Decorator. Customizable Printer. [Solution](src/main/java/decorator/printer). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/decorator.md).
+7. State. Game Character Development System. [Solution](src/main/java/state/game_character). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/state.md).

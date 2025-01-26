@@ -19,7 +19,6 @@ public class EncryptionDecorator extends DataSourceDecorator {
         return decode(super.readData());
     }
 
-    // Caesar cipher with a shift of +1 byte for simplicity of the example
     private String encode(String data) {
         byte[] result = data.getBytes();
         for (int i = 0; i < result.length; i++) {
