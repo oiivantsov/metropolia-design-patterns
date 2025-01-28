@@ -10,3 +10,4 @@ Assignments for the Design Patterns course.
 5. Singleton. Logger System. [Solution](src/main/java/singleton/logger_system). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/singleton.md).
 6. Decorator. Customizable Printer. [Solution](src/main/java/decorator/printer). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/decorator.md).
 7. State. Game Character Development System. [Solution](src/main/java/state/game_character). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/state.md).
+8. Template. Applying a game framework. [Solution](src/main/java/template_method/game). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/template_method.md).
