@@ -1,17 +1,14 @@
 package memento.guiState;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Controller {
     private Model model;
     private Gui gui;
-    private List<IMemento> history; // Memento history
+    private Caretaker caretaker;
 
     public Controller(Gui gui) {
         this.model = new Model();
         this.gui = gui;
-        this.history = new ArrayList<>();
+        this.caretaker = new Caretaker();
     }
 
     public void setOption(int optionNumber, int choice) {
@@ -33,16 +30,34 @@ public class Controller {
     }
 
     public void undo() {
-        if (!history.isEmpty()) {
-            System.out.println("Memento found in history");
-            IMemento previousState = history.remove(history.size() - 1);
+        IMemento previousState = caretaker.undo(model.createMemento());
+        if (previousState != null) {
             model.restoreState(previousState);
+            gui.updateGui();
+        }
+    }
+
+    public void redo() {
+        IMemento redoState = caretaker.redo(model.createMemento());
+        if (redoState != null) {
+            model.restoreState(redoState);
+            gui.updateGui();
+        }
+    }
+
+    public void restoreFromHistory(int index) {
+        if (index >= 0 && index < caretaker.getUndoHistory().size()) {
+            IMemento selectedMemento = caretaker.getUndoHistory().get(index);
+            model.restoreState(selectedMemento);
+            caretaker.saveState(selectedMemento);
             gui.updateGui();
         }
     }
 
     private void saveToHistory() {
         IMemento currentState = model.createMemento();
-        history.add(currentState);
+        caretaker.saveState(currentState);
+        String entry = "Saved at: " + currentState.getTimestamp();
+        gui.addHistoryEntry(entry);
     }
 }

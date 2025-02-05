@@ -1,10 +1,14 @@
 package memento.guiState;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -18,6 +22,8 @@ public class Gui extends Application {
     private ColorBox colorBox2;
     private ColorBox colorBox3;
     private CheckBox checkBox;
+
+    private ObservableList<String> historyItems = FXCollections.observableArrayList();
 
     public void start(Stage stage) {
 
@@ -44,11 +50,13 @@ public class Gui extends Application {
         hBox.setMargin(colorBox3.getRectangle(), insets);
 
 
-        Label label = new Label("Press Ctrl-Z to undo the last change.");
-        label.setPadding(insets);
+        Label label1 = new Label("Press Ctrl-Z to undo the last change.");
+        Label label2 = new Label("Press Ctrl-Y to redo");
+        label1.setPadding(insets);
+        label2.setPadding(insets);
 
         // create a VBox that contains the HBox and the CheckBox
-        VBox vBox = new VBox(hBox, checkBox, label);
+        VBox vBox = new VBox(hBox, checkBox, label1, label2);
         // call controller when the CheckBox is clicked
         checkBox.setOnAction(event -> {
             controller.setIsSelected(checkBox.isSelected());
@@ -61,8 +69,15 @@ public class Gui extends Application {
                 // Ctrl-Z: undo
                 System.out.println("Undo key combination pressed");
                 controller.undo();
+            } else if (event.isControlDown() && event.getCode() == KeyCode.Y) {
+                // Ctrl-Y: redo
+                controller.redo();
             }
         });
+
+        Button historyButton = new Button("Show History");
+        historyButton.setOnAction(e -> showHistoryWindow());
+        vBox.getChildren().add(historyButton);
 
 
         stage.setScene(scene);
@@ -76,5 +91,23 @@ public class Gui extends Application {
         colorBox2.setColor(controller.getOption(2));
         colorBox3.setColor(controller.getOption(3));
         checkBox.setSelected(controller.getIsSelected());
+    }
+
+    private void showHistoryWindow() {
+        Stage historyStage = new Stage();
+        ListView<String> listView = new ListView<>(historyItems);
+        listView.setOnMouseClicked(event -> {
+            int index = listView.getSelectionModel().getSelectedIndex();
+            controller.restoreFromHistory(index);
+        });
+
+        VBox vBox = new VBox(listView);
+        historyStage.setScene(new Scene(vBox));
+        historyStage.setTitle("History Window");
+        historyStage.show();
+    }
+
+    public void addHistoryEntry(String entry) {
+        historyItems.add(entry);
     }
 }
