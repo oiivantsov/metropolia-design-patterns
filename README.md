@@ -14,3 +14,5 @@ Assignments for the Design Patterns course.
 9. Strategy. Algorithm Performance Comparison. [Solution](src/main/java/strategy/algorithm_comparison). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/strategy.md).
 10. Chain of Responsibility. Customer Feedback Handler. [Solution](src/main/java/chain_of_responsibility/feedback_handler). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/chain_of_responsibility.md).
 11. Memento. GUI Improved history functionality. [Solution](src/main/java/memento/guiState). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/memento.md).
+12. Proxy. Protected documents. [Solution](src/main/java/proxy/protected_docs). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/proxy.md).
+13. Visitor. File System Handling. [Solution](src/main/java/visitor/file_system_handling). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/visitor.md).
