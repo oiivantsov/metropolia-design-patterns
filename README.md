@@ -16,3 +16,4 @@ Assignments for the Design Patterns course.
 11. Memento. GUI Improved history functionality. [Solution](src/main/java/memento/guiState). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/memento.md).
 12. Proxy. Protected documents. [Solution](src/main/java/proxy/protected_docs). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/proxy.md).
 13. Visitor. File System Handling. [Solution](src/main/java/visitor/file_system_handling). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/visitor.md).
+14. Builder. Computer Builder. [Solution](src/main/java/builder/computer). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/builder.md).
