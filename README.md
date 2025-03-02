@@ -19,3 +19,4 @@ Assignments for the Design Patterns course.
 14. Builder. Computer Builder. [Solution](src/main/java/builder/computer). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/builder.md).
 15. Adapter. Calendar. [Solution](src/main/java/adapter/calendar). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/adapter.md).
 16. Bridge. Color & Shape. [Solution](src/main/java/bridge/shape_color). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/bridge.md).
+17. Flyweight. RPG Map Generator. [Solution](src/main/java/flyweight/rpg_map). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/flyweight.md).
