@@ -22,3 +22,4 @@ Assignments for the Design Patterns course.
 17. Flyweight. RPG Map Generator. [Solution](src/main/java/flyweight/rpg_map). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/flyweight.md).
 18. Prototype. Book Recommendation System. [Solution](src/main/java/prototype/book_recommend). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/prototype.md).
 19. Mediator. Chat App. [Solution](src/main/java/mediator/chat_app). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/mediator.md).
+20. Iterator. Fibonacci. [Solution](src/main/java/iterator/fibonacci). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/iterator.md).
