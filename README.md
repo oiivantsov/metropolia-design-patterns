@@ -23,3 +23,4 @@ Assignments for the Design Patterns course.
 18. Prototype. Book Recommendation System. [Solution](src/main/java/prototype/book_recommend). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/prototype.md).
 19. Mediator. Chat App. [Solution](src/main/java/mediator/chat_app). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/mediator.md).
 20. Iterator. Fibonacci. [Solution](src/main/java/iterator/fibonacci). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/iterator.md).
+21. Facade. API Facade. [Solution](src/main/java/facade/api). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/facade.md).
