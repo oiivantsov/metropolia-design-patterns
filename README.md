@@ -24,3 +24,4 @@ Assignments for the Design Patterns course.
 19. Mediator. Chat App. [Solution](src/main/java/mediator/chat_app). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/mediator.md).
 20. Iterator. Fibonacci. [Solution](src/main/java/iterator/fibonacci). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/iterator.md).
 21. Facade. API Facade. [Solution](src/main/java/facade/api). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/facade.md).
+22. Command. Pixel Art. [Solution](src/main/java/command/pixel_art). [Assignment](https://github.com/vesavvo/design_patterns/blob/master/markdown/assignments/command.md).
